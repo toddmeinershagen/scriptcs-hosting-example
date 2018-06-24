@@ -12,7 +12,6 @@ namespace ScriptsHostingSample
     {
         public static void Main (string[] args)
         {
- 
             var console = (IConsole) new ScriptConsole();
             var logProvider = new ColoredConsoleLogProvider (LogLevel.Info, console);
 
@@ -24,7 +23,9 @@ namespace ScriptsHostingSample
             var executor = (ScriptExecutor) services.Executor;
             executor.Initialize (Enumerable.Empty<string>(), Enumerable.Empty<IScriptPack>());
             ExecuteLooseScript (executor);
-            ExecuteFile (executor);
+            ExecuteFile(executor);
+
+            Console.ReadLine();
         }
 
         public static void ExecuteLooseScript(ScriptExecutor executor) {
